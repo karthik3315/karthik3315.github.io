@@ -1,0 +1,83 @@
+/* Custom styles, animations, and print stylesheet */
+
+/* Grid pattern background */
+.bg-grid-pattern {
+  background-image: radial-gradient(rgba(99, 102, 241, 0.4) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #1e293b;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Skill badges */
+.skill-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 0.85rem;
+  font-size: 0.825rem;
+  font-weight: 500;
+  border-radius: 0.75rem;
+  background-color: #f1f5f9;
+  color: #334155;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease-in-out;
+}
+.dark .skill-badge {
+  background-color: #1e293b;
+  color: #e2e8f0;
+  border-color: #334155;
+}
+.skill-badge:hover {
+  transform: translateY(-2px);
+  border-color: #6366f1;
+}
+
+/* Project tech tags */
+.tech-tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  background-color: #e0e7ff;
+  color: #4338ca;
+}
+.dark .tech-tag {
+  background-color: rgba(99, 102, 241, 0.2);
+  color: #a5b4fc;
+}
+
+/* Print Stylesheet for clean resume export */
+@media print {
+  header, footer, #toast, #theme-toggle, #mobile-menu-btn, button, #project-modal {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .dark {
+    background: white !important;
+    color: black !important;
+  }
+  section {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+    page-break-inside: avoid;
+  }
+}
